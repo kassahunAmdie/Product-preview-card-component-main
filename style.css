@@ -1,0 +1,145 @@
+:root {
+    --primary-dark-cyan: hsl(158, 36%, 37%);
+    --primary-darker-cyan: hsl(158, 42%, 18%);
+    --primary-cream: hsl(30, 38%, 92%);
+    --neutral-dark-blue: hsl(212, 21%, 14%);
+    --neutral-grayish-blue: hsl(228, 12%, 48%);
+    --neutral-white: hsl(0, 0%, 100%);
+
+    --ff-primary: "Montserrat", sans-serif;
+    --ff-secondary: "Fraunces", serif;
+
+    --fw-normal: 500;
+    --fw-bold: 700;
+}
+
+/* CSS Reset */
+
+/*
+  Josh's Custom CSS Reset with small edits
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /* End CSS Reset */
+
+body {
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-normal);
+    color: var(--neutral-grayish-blue);
+    font-size: 0.875rem;
+}
+
+.product-card {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  padding: 28px 16px;
+  background-color: var(--primary-cream);
+}
+
+.card-content {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.product-description {
+  padding: 24px;
+  background-color: var(--neutral-white);
+}
+
+.classification {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.375rem;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-family: var(--ff-secondary);
+  font-weight: var(--fw-bold);
+  font-size: 2rem;
+  color: var(--neutral-dark-blue);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.product-price {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  margin-top: 24px;
+}
+
+span.discounted {
+  font-family: var(--ff-secondary);
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+  color: var(--primary-dark-cyan);
+}
+
+span.regular-price {
+  text-decoration: line-through;
+}
+
+.button {
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: none;
+  margin-top: 20px;
+  background-color: var(--primary-dark-cyan);
+  color: var(--neutral-white);
+  font-weight: var(--fw-bold);
+}
+
+.button:hover {
+  background-color: var(--primary-darker-cyan);
+}
+
+.button::before {
+  content: '';
+  background-image: url(images/icon-cart.svg);
+  width: 15px;
+  height: 16px;
+}
+
+.attribution { 
+  font-size: 11px; text-align: center; 
+}
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
+
+/* For tablets and desktop */
+
+@media  screen and (min-width : 600px) {
+  .card-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+  }
+}
