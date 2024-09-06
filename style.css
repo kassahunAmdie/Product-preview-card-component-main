@@ -84,6 +84,7 @@ h1 {
 
 .product-price {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 19px;
   margin-top: 24px;
